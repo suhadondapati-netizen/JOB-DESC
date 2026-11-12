@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Run AI Job Recommender (F5)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "FLASK_ENV": "development",
+        "PYTHONUNBUFFERED": "1"
+      }
+    },
+    {
+      "name": "Python: Flask App (app.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "flask",
+      "env": {
+        "FLASK_APP": "${workspaceFolder}/flask_app/app.py",
+        "FLASK_DEBUG": "1"
+      },
+      "args": [
+        "run",
+        "--port=5000"
+      ],
+      "jinja": true
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{% extends 'base.html' %}
+
+{% block title %}AI-Based Job Recommendation System | Intelligent Career Guidance{% endblock %}
+
+{% block content %}
+<!-- HERO SECTION -->
+<section class="hero-section text-white py-5 position-relative overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="container py-lg-5 position-relative z-1">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white bg-opacity-10 border border-white border-opacity-20 mb-3 backdrop-blur">
+                    <span class="badge bg-primary text-white rounded-pill px-2 py-1">AI-Powered</span>
+                    <span class="small fw-medium">Next-Gen Career Recommendation Engine</span>
+                </div>
+                <h1 class="display-4 fw-extrabold mb-3 lh-sm">
+                    AI-Based Job Recommendation Based on <span class="gradient-text">Educational Qualifications</span>
+                </h1>
+                <p class="lead text-secondary-light mb-4">
+                    Bridge the gap between your academic degree and high-demand tech careers. Our intelligent matching engine evaluates your degrees, technical skills, projects, and certifications against real-world industry requirements to calculate transparent match scores and actionable roadmaps.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mb-4">
+                    <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-bold custom-btn-primary shadow">
+                        <i class="fa-solid fa-rocket me-2"></i> Start Career Evaluation
+                    </a>
+                    <a href="#interactive-preview" class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 fw-medium backdrop-blur">
+                        <i class="fa-solid fa-sliders me-2"></i> Try Instant Match Preview
+                    </a>
+                </div>
+                <!-- Trust & Metric Counters -->
+                <div class="row g-3 pt-3 border-top border-white border-opacity-10">
+                    <div class="col-4">
+                        <div class="fw-bold fs-4 text-white">13+</div>
+                        <div class="extra-small text-muted-light">Tech Job Domains</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="fw-bold fs-4 text-white">40+</div>
+                        <div class="extra-small text-muted-light">Master Skills Taxonomies</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="fw-bold fs-4 text-white">100%</div>
+                        <div class="extra-small text-muted-light">Transparent Scoring</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Interactive Preview Card -->
+            <div class="col-lg-5">
+                <div class="card glass-card p-4 border-0 shadow-lg position-relative">
+                    <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom border-white border-opacity-10">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="status-indicator"></div>
+                            <span class="small fw-bold text-white">AI Matching Engine Live</span>
+                        </div>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">Scikit-Learn Ready</span>
+                    </div>
+
+                    <div class="sample-match-box mb-3 p-3 rounded bg-dark bg-opacity-40 border border-white border-opacity-10">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h6 class="fw-bold text-white mb-0">Machine Learning Engineer</h6>
+                                <span class="badge bg-primary-subtle text-primary extra-small">B.Tech / M.Tech / MCA</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="fs-5 fw-extrabold text-success">92%</span>
+                                <div class="extra-small text-muted">Match Score</div>
+                            </div>
+                        </div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-success" style="width: 92%"></div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-1 mt-2">
+                            <span class="badge bg-success bg-opacity-20 text-success extra-small"><i class="fa-solid fa-check me-1"></i> Python</span>
+                            <span class="badge bg-success bg-opacity-20 text-success extra-small"><i class="fa-solid fa-check me-1"></i> Scikit-Learn</span>
+                            <span class="badge bg-success bg-opacity-20 text-success extra-small"><i class="fa-solid fa-check me-1"></i> TensorFlow</span>
+                            <span class="badge bg-danger bg-opacity-20 text-danger extra-small"><i class="fa-solid fa-xmark me-1"></i> Docker (Gap)</span>
+                        </div>
+                    </div>
+
+                    <div class="sample-match-box p-3 rounded bg-dark bg-opacity-40 border border-white border-opacity-10">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h6 class="fw-bold text-white mb-0">Data Scientist</h6>
+                                <span class="badge bg-info-subtle text-info extra-small">B.Tech / B.Sc CS / Stats</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="fs-5 fw-extrabold text-info">88%</span>
+                                <div class="extra-small text-muted">Match Score</div>
+                            </div>
+                        </div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-info" style="width: 88%"></div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-1 mt-2">
+                            <span class="badge bg-success bg-opacity-20 text-success extra-small"><i class="fa-solid fa-check me-1"></i> Python</span>
+                            <span class="badge bg-success bg-opacity-20 text-success extra-small"><i class="fa-solid fa-check me-1"></i> SQL</span>
+                            <span class="badge bg-success bg-opacity-20 text-success extra-small"><i class="fa-solid fa-check me-1"></i> Pandas</span>
+                            <span class="badge bg-danger bg-opacity-20 text-danger extra-small"><i class="fa-solid fa-xmark me-1"></i> Deep Learning</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-center">
+                        <a href="{{ url_for('register') }}" class="btn btn-sm btn-outline-light rounded-pill w-100 py-2">
+                            Create Your Profile & Get Real Matches <i class="fa-solid fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTERACTIVE INSTANT MATCH PREVIEW -->
+<section id="interactive-preview" class="py-5 bg-light border-bottom">
+    <div class="container py-4">
+        <div class="row align-items-center mb-4">
+            <div class="col-lg-8">
+                <span class="badge bg-primary-subtle text-primary fw-bold text-uppercase px-3 py-1 rounded-pill mb-2">Interactive Demo</span>
+                <h2 class="fw-bold text-dark">Instant Qualification & Skills Match Preview</h2>
+                <p class="text-secondary mb-0">Select your current degree and select a few skills to see how our transparent mathematical matching algorithm prioritizes roles in real-time.</p>
+            </div>
+        </div>
+
+        <div class="card shadow-sm border-0 rounded-4 p-4 mb-4 bg-white">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <label class="form-label fw-bold text-dark small">1. Highest Educational Qualification</label>
+                    <select id="preview-qual" class="form-select form-select-lg rounded-3">
+                        <option value="B.Tech / B.E." selected>B.Tech / B.E. (Computer Science, IT, Electronics)</option>
+                        <option value="MCA">MCA (Master of Computer Applications)</option>
+                        <option value="B.Sc CS">B.Sc Computer Science / IT / Stats</option>
+                        <option value="M.Tech">M.Tech / M.S. in CS/AI/Data</option>
+                        <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                    </select>
+                </div>
+                <div class="col-md-8">
+                    <label class="form-label fw-bold text-dark small">2. Select Your Known Technical Skills</label>
+                    <div class="d-flex flex-wrap gap-2" id="skill-pills">
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill active" data-skill="Python">Python</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill active" data-skill="SQL">SQL</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill active" data-skill="Pandas">Pandas</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill" data-skill="Scikit-learn">Scikit-learn</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill" data-skill="JavaScript">JavaScript</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill" data-skill="React">React</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill" data-skill="Docker">Docker</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill" data-skill="AWS">AWS</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill" data-skill="Java">Java</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary skill-pill" data-skill="Power BI">Power BI</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0 text-dark">Simulated Top Recommendations</h5>
+                    <span class="badge bg-primary rounded-pill px-3 py-1">Weighted Matrix Matching</span>
+                </div>
+                <div class="row g-3" id="preview-results">
+                    <!-- Dynamic Preview Cards rendered via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section id="how-it-works" class="py-5 bg-white">
+    <div class="container py-lg-4">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-purple-subtle text-purple fw-bold text-uppercase px-3 py-1 rounded-pill mb-2">Step-by-Step Architecture</span>
+            <h2 class="display-6 fw-bold text-dark">How The Recommendation Engine Works</h2>
+            <p class="text-secondary">A transparent, machine-learning-driven pipeline that never invents arbitrary numbers.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center step-card">
+                    <div class="step-badge mx-auto mb-3">1</div>
+                    <div class="icon-circle mb-3 mx-auto bg-primary-subtle text-primary">
+                        <i class="fa-solid fa-user-graduate fs-4"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Profile Ingestion</h5>
+                    <p class="text-secondary small mb-0">
+                        Collects student qualification, CGPA, technical skills, programming languages, databases, certifications, projects, and career interests.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center step-card">
+                    <div class="step-badge mx-auto mb-3">2</div>
+                    <div class="icon-circle mb-3 mx-auto bg-purple-subtle text-purple">
+                        <i class="fa-solid fa-vector-square fs-4"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Vector Matrix Matching</h5>
+                    <p class="text-secondary small mb-0">
+                        Extracts normalized skill vectors and cross-references academic requirements with real-world industry job requirement datasets.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center step-card">
+                    <div class="step-badge mx-auto mb-3">3</div>
+                    <div class="icon-circle mb-3 mx-auto bg-info-subtle text-info">
+                        <i class="fa-solid fa-chart-pie fs-4"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Transparent Scoring</h5>
+                    <p class="text-secondary small mb-0">
+                        Calculates clear, deterministic matching scores (educational match + weighted skill match) with full explanations and missing skill breakdowns.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center step-card">
+                    <div class="step-badge mx-auto mb-3">4</div>
+                    <div class="icon-circle mb-3 mx-auto bg-success-subtle text-success">
+                        <i class="fa-solid fa-map-location-dot fs-4"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Roadmap & What-If</h5>
+                    <p class="text-secondary small mb-0">
+                        Generates customized learning roadmaps, practice project recommendations, and what-if simulation to bridge skill gaps.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CORE FEATURES SECTION -->
+<section id="features" class="py-5 bg-light">
+    <div class="container py-lg-4">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-primary-subtle text-primary fw-bold text-uppercase px-3 py-1 rounded-pill mb-2">Comprehensive Platform</span>
+            <h2 class="display-6 fw-bold text-dark">End-to-End Career Intelligence Features</h2>
+            <p class="text-secondary">Designed specifically for undergraduate & postgraduate engineering, computing, and technology students.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Feature 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-box p-4 rounded-4 bg-white shadow-sm h-100">
+                    <div class="feature-icon bg-primary text-white mb-3">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Qualification Verification</h5>
+                    <p class="text-secondary small mb-0">
+                        Validates student degrees (B.Tech, MCA, B.Sc CS, M.Tech, BCA), specialization alignment, and minimum academic CGPA criteria against real industry standards.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-box p-4 rounded-4 bg-white shadow-sm h-100">
+                    <div class="feature-icon bg-purple text-white mb-3">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Transparent Matching Formula</h5>
+                    <p class="text-secondary small mb-0">
+                        No black-box or fabricated metrics. Every match score clearly explains matched skills, missing prerequisites, and weight distributions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-box p-4 rounded-4 bg-white shadow-sm h-100">
+                    <div class="feature-icon bg-success text-white mb-3">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Skill Gap Analysis</h5>
+                    <p class="text-secondary small mb-0">
+                        Pinpoints the exact high-demand tools and frameworks standing between a student and their dream job role, prioritized by employer demand.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-box p-4 rounded-4 bg-white shadow-sm h-100">
+                    <div class="feature-icon bg-warning text-white mb-3">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">What-If Simulation Simulator</h5>
+                    <p class="text-secondary small mb-0">
+                        Allows students to simulate adding hypothetical skills (e.g. learning Docker or PyTorch) and instantly watch their match score surge.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-box p-4 rounded-4 bg-white shadow-sm h-100">
+                    <div class="feature-icon bg-info text-white mb-3">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">PDF Career Report</h5>
+                    <p class="text-secondary small mb-0">
+                        Generates a comprehensive downloadable career readiness report containing qualifications, top job rankings, skill charts, and weekly study plans.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-box p-4 rounded-4 bg-white shadow-sm h-100">
+                    <div class="feature-icon bg-dark text-white mb-3">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark">Admin Dataset Studio</h5>
+                    <p class="text-secondary small mb-0">
+                        Allows university administrators and career counselors to add new job roles, calibrate skill weights, and monitor student placement statistics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 13 REAL JOB ROLES SECTION -->
+<section id="job-roles" class="py-5 bg-white">
+    <div class="container py-lg-4">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge bg-primary-subtle text-primary fw-bold text-uppercase px-3 py-1 rounded-pill mb-2">Curated Industry Roles</span>
+            <h2 class="display-6 fw-bold text-dark">Supported Technology Career Tracks</h2>
+            <p class="text-secondary">The system maps academic profiles against 13 high-demand IT and software engineering roles.</p>
+        </div>
+
+        <div class="row g-4">
+            {% for role in roles %}
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border border-light-subtle rounded-4 p-4 shadow-sm hover-elevate">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-primary-subtle text-primary extra-small">{{ role.domain }}</span>
+                        <span class="badge bg-light text-dark border extra-small">{{ role.salary_range }}</span>
+                    </div>
+                    <h5 class="fw-bold text-dark mt-2 mb-2">{{ role.title }}</h5>
+                    <p class="text-secondary small mb-3">{{ role.description }}</p>
+                    <div class="mb-3">
+                        <span class="text-muted extra-small d-block fw-semibold mb-1">ELIGIBLE QUALIFICATIONS:</span>
+                        <span class="small text-dark fw-medium">{{ role.educational_requirements }}</span>
+                    </div>
+                    <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                        <span class="extra-small text-muted"><i class="fa-solid fa-trophy text-warning me-1"></i> Min CGPA: {{ role.min_cgpa }}</span>
+                        <a href="{{ url_for('register') }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">Check Match</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION / REGISTRATION BANNER -->
+<section class="cta-banner text-white py-5 position-relative overflow-hidden">
+    <div class="container py-4 text-center position-relative z-1">
+        <h2 class="display-6 fw-bold mb-3">Ready to Discover Your Ideal Tech Career?</h2>
+        <p class="lead text-white-50 max-w-700 mx-auto mb-4">
+            Join students who have successfully translated their engineering degrees and coding skills into targeted tech careers with transparent guidance.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{{ url_for('register') }}" class="btn btn-light btn-lg rounded-pill px-4 py-3 fw-bold text-primary shadow">
+                Create Free Student Account <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+            <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 fw-medium">
+                Sign In to Existing Account
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Module 1 Interactive Preview JavaScript
+    const selectedSkills = new Set(['Python', 'SQL', 'Pandas']);
+
+    document.querySelectorAll('.skill-pill').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const skill = this.getAttribute('data-skill');
+            if (selectedSkills.has(skill)) {
+                selectedSkills.delete(skill);
+                this.classList.remove('active');
+            } else {
+                selectedSkills.add(skill);
+                this.classList.add('active');
+            }
+            updatePreviewMatches();
+        });
+    });
+
+    document.getElementById('preview-qual').addEventListener('change', updatePreviewMatches);
+
+    function updatePreviewMatches() {
+        const qualification = document.getElementById('preview-qual').value;
+        const skillsArray = Array.from(selectedSkills);
+
+        fetch('/api/preview-match', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                qualification: qualification,
+                skills: skillsArray
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            renderMatches(data.matches);
+        })
+        .catch(err => {
+            console.error('Error fetching preview match:', err);
+        });
+    }
+
+    function renderMatches(matches) {
+        const container = document.getElementById('preview-results');
+        if (!matches || matches.length === 0) {
+            container.innerHTML = '<div class="col-12 text-center py-3 text-muted">Select at least one skill to view matches.</div>';
+            return;
+        }
+
+        let html = '';
+        matches.forEach(item => {
+            const scoreColor = item.match_score >= 80 ? 'success' : item.match_score >= 60 ? 'info' : 'warning';
+            html += `
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border rounded-3 p-3 shadow-sm bg-white">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <span class="badge bg-secondary-subtle text-secondary extra-small">${item.domain}</span>
+                            <span class="fw-bold text-${scoreColor} fs-5">${item.match_score}%</span>
+                        </div>
+                        <h6 class="fw-bold text-dark mb-1 text-truncate">${item.title}</h6>
+                        <div class="progress mb-2" style="height: 5px;">
+                            <div class="progress-bar bg-${scoreColor}" style="width: ${item.match_score}%"></div>
+                        </div>
+                        <div class="extra-small text-muted mb-2">
+                            <span>Qual: ${item.qual_score}%</span> • <span>Skills: ${item.skill_score}%</span>
+                        </div>
+                        <div class="extra-small text-muted mb-1">
+                            <span class="text-success fw-semibold"><i class="fa-solid fa-check"></i> Matched (${item.matched_skills.length}):</span>
+                            <div class="text-dark text-truncate">${item.matched_skills.join(', ') || 'None'}</div>
+                        </div>
+                        <div class="extra-small text-muted">
+                            <span class="text-danger fw-semibold"><i class="fa-solid fa-circle-exclamation"></i> Skills Gap (${item.missing_skills.length}):</span>
+                            <div class="text-secondary text-truncate">${item.missing_skills.join(', ') || 'Fully Matched!'}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    // Initial trigger on page load
+    updatePreviewMatches();
+</script>
+{% endblock %}

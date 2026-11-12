@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign In | AI-Based Job Recommendation System{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light min-vh-80 d-flex align-items-center">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
+                    <div class="text-center mb-4">
+                        <div class="brand-icon mx-auto mb-3" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                            <i class="fa-solid fa-brain text-white"></i>
+                        </div>
+                        <h3 class="fw-bold text-dark">Welcome Back</h3>
+                        <p class="text-secondary small">Sign in to access your recommendations and learning roadmap</p>
+                    </div>
+
+                    <form method="POST" action="{{ url_for('login') }}">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark small">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="fa-regular fa-envelope text-muted"></i></span>
+                                <input type="email" name="email" class="form-control bg-light border-start-0" placeholder="student@careerai.edu" required value="student@careerai.edu">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label class="form-label fw-semibold text-dark small mb-0">Password</label>
+                                <span class="extra-small text-muted">Demo: student123</span>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-lock text-muted"></i></span>
+                                <input type="password" name="password" id="login-password" class="form-control bg-light border-start-0" placeholder="••••••••" required value="student123">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold custom-btn-primary mb-3 shadow-sm">
+                            <i class="fa-solid fa-right-to-bracket me-2"></i> Sign In to Account
+                        </button>
+
+                        <div class="p-3 rounded-3 bg-light border text-center small mb-3">
+                            <span class="text-muted d-block extra-small fw-semibold mb-1">QUICK TEST CREDENTIALS:</span>
+                            <div class="extra-small text-dark font-monospace">Student: student@careerai.edu / student123</div>
+                            <div class="extra-small text-dark font-monospace">Admin: admin@careerai.edu / admin123</div>
+                        </div>
+
+                        <div class="text-center small text-secondary">
+                            Don't have an account yet? <a href="{{ url_for('register') }}" class="text-primary fw-semibold text-decoration-none">Register here</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

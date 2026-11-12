@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Registration | AI-Based Job Recommendation System{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light min-vh-80 d-flex align-items-center">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-6">
+                <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
+                    <div class="text-center mb-4">
+                        <div class="brand-icon mx-auto mb-3" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                            <i class="fa-solid fa-user-plus text-white"></i>
+                        </div>
+                        <h3 class="fw-bold text-dark">Create Student Account</h3>
+                        <p class="text-secondary small">Begin your personalized qualification-based AI career journey</p>
+                    </div>
+
+                    <form method="POST" action="{{ url_for('register') }}">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark small">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="fa-regular fa-user text-muted"></i></span>
+                                <input type="text" name="full_name" class="form-control bg-light border-start-0" placeholder="e.g. Maya Sharma" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark small">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="fa-regular fa-envelope text-muted"></i></span>
+                                <input type="email" name="email" class="form-control bg-light border-start-0" placeholder="student@university.edu" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-lock text-muted"></i></span>
+                                    <input type="password" name="password" class="form-control bg-light border-start-0" placeholder="••••••••" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small">Confirm Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-lock text-muted"></i></span>
+                                    <input type="password" name="confirm_password" class="form-control bg-light border-start-0" placeholder="••••••••" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="termsCheck" required checked>
+                            <label class="form-check-label extra-small text-secondary" for="termsCheck">
+                                I agree that the AI matching engine will calculate recommendations based solely on my educational qualifications, skills, and industry datasets.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold custom-btn-primary mb-3 shadow-sm">
+                            <i class="fa-solid fa-rocket me-2"></i> Register & Set Up Profile
+                        </button>
+
+                        <div class="text-center small text-secondary">
+                            Already have an account? <a href="{{ url_for('login') }}" class="text-primary fw-semibold text-decoration-none">Sign In here</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
